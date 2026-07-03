@@ -3,20 +3,29 @@ main.py
 =======
 Este es el archivo que se ejecuta para USAR el programa.
 
-# Es cortisimo a proposito: solo crea la Vista y la enciende. La Vista
-# muestra el menu; el Modelo dice que es un dispositivo; el Controlador
-# guarda y lee los datos.
+# Primero pregunta que quieres gestionar (dispositivos o clientes) y luego
+# enciende la Vista correspondiente.
 #
 # Para ejecutar el programa, desde la carpeta del proyecto:
 #     python main.py
 """
 
 from vista.consola import Vista
+from vista.consola_cliente import VistaCliente
 
 
 def main():
-    programa = Vista()
-    programa.iniciar()
+    print("===== QUE QUIERES GESTIONAR? =====")
+    print("1. Dispositivos")
+    print("2. Clientes")
+    opcion = input("Elige una opcion: ")
+
+    if opcion == "1":
+        Vista().iniciar()
+    elif opcion == "2":
+        VistaCliente().iniciar()
+    else:
+        print("Opcion no valida.")
 
 
 if __name__ == "__main__":
