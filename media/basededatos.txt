@@ -1,3 +1,4 @@
 Router-Sala1,192.168.1.1,router,encendido
 Switch-Lab,10.0.0.5,switch,encendido
 Servidor-Web,192.168.1.100,servidor,apagado
+Home,1.1.1.1,router,encendido

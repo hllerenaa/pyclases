@@ -6,7 +6,6 @@ resultados. Es la parte que "se ve". Cuando hay que guardar o leer datos,
 le pide ayuda al Controlador.
 """
 
-from modelo.dispositivo import validar_ip
 from controlador.controlador import Controlador
 
 
@@ -41,14 +40,6 @@ class Vista:
             else:
                 print("\nOpcion no valida. Elige del 1 al 5.")
 
-    def pedir_ip(self):
-        # Pide una IP y no deja avanzar hasta que este bien escrita.
-        ip = input("IP: ")
-        while not validar_ip(ip):
-            print("IP no valida. Ejemplo correcto: 192.168.1.1")
-            ip = input("IP: ")
-        return ip
-
     def mostrar(self, dispositivos):
         # Muestra la lista numerada (1, 2, 3...).
         if len(dispositivos) == 0:
@@ -63,7 +54,7 @@ class Vista:
     def agregar(self):
         nombre = input("Nombre: ")
         tipo = input("Tipo (router, switch, servidor...): ")
-        ip = self.pedir_ip()
+        ip = input("Ingresar IP: ")
         self.controlador.agregar(nombre, ip, tipo)
         print("\nDispositivo agregado.")
 
@@ -89,7 +80,7 @@ class Vista:
         print("Escribe los datos nuevos:")
         nombre = input("Nombre: ")
         tipo = input("Tipo (router, switch, servidor...): ")
-        ip = self.pedir_ip()
+        ip = input("Ingresar IP: ")
         self.controlador.editar(numero, nombre, ip, tipo)
         print("\nDispositivo actualizado.")
 
