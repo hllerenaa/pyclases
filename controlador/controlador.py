@@ -25,6 +25,7 @@ class Controlador:
     def listar(self):
         # Lee el archivo y devuelve una lista de dispositivos.
         dispositivos = []
+
         try:
             with open(self.archivo, "r", encoding="utf-8") as archivo:
                 for linea in archivo:
