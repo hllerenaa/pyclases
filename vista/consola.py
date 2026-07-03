@@ -48,7 +48,7 @@ class Vista:
         print("\n----- DISPOSITIVOS -----")
         numero = 1
         for d in dispositivos:
-            print(f"{numero}. {d.nombre} | IP: {d.ip} | Tipo: {d.tipo} | Estado: {d.estado}")
+            print(f"{numero}). {d.nombre} | IP: {d.ip} | Tipo: {d.tipo} | Estado: {d.estado}")
             numero = numero + 1
 
     def agregar(self):
